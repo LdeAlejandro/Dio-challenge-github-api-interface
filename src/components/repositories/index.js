@@ -6,6 +6,7 @@ import * as S from "./styled";
 const Repositories = () => {
   const { githubState, getUserRepos, getUserStarred } = useGithub();
   const [hasUserForSearchrepos, setHasUserForSearchrepos] = useState(false);
+  const gitHubBaseLink = 'https://github.com/'
 
   useEffect(() => {
     if (githubState.user.login) {
@@ -34,7 +35,7 @@ const Repositories = () => {
                 <RepositoryItem
                   key={item.id}
                   name={item.name}
-                  linkToRepo={item.full_name}
+                  linkToRepo={item.html_url}
                   fullName={item.full_name}
                 />
               ))}

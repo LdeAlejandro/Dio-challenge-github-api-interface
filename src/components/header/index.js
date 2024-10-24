@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as S from "./styled";
 import useGithub from "../../hooks/github-hooks";
 
 const Header = () => {
   const { getUser } = useGithub();
-  const [usernameForSearch, setUsernameForSearch] = useState();
-
+  const [usernameForSearch, setUsernameForSearch] = useState('LdeAlejandro');
+ 
   const submitGetUser = () => {
     if (!usernameForSearch) return;
     return getUser(usernameForSearch);
   };
+
+  useEffect(() => {
+    submitGetUser();
+  }, [1]); 
 
   return (
     <header>

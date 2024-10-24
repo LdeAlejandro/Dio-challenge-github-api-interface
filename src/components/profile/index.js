@@ -21,7 +21,8 @@ const Profile = () => {
               {githubState.user.login}
             </a>
           </S.WrapperUserGeneric>
-          <S.WrapperUserGeneric>
+
+          {/* <S.WrapperUserGeneric>
             <h3>Company:</h3>
             <span>{githubState.user.company}</span>
           </S.WrapperUserGeneric>
@@ -34,7 +35,7 @@ const Profile = () => {
             <a href={githubState.user.blog} target="_blank" rel="noreferrer">
               {githubState.user.blog}
             </a>
-          </S.WrapperUserGeneric>
+          </S.WrapperUserGeneric> */}
         </div>
         <S.WrapperStatusCount>
           <div>
@@ -53,6 +54,7 @@ const Profile = () => {
             <h4>Repos</h4>
             <span> {githubState.user.public_repos}</span>
           </div>
+        
         </S.WrapperStatusCount>
       </S.WrapperInfoUser>
     </S.Wrapper>
